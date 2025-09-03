@@ -28,7 +28,6 @@ class OrderPage(BasePage):
     @allure.step('Клик по станции метро: {metro_station}')
     def select_metro_station(self, metro_station):
         locator = OrderPageLocator.get_metro_option_locator(metro_station) 
-        # self.wait_for_element(locator)
         self.scroll_to_element(locator)
         self.click_on_element(locator)
 
