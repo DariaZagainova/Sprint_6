@@ -1,9 +1,14 @@
 import allure
 from pages.base_page import BasePage
 from locators.header_components_locators import HeaderComponentsLocator
+from locators.order_page_locators import OrderPageLocator
 from curl import Urls
 
 class HeaderComponent(BasePage):
+
+    @allure.step('Ждем открытия страницы оформления заказа')
+    def wait_open_order_page(self):
+        self.wait_for_element(OrderPageLocator.NAME_INPUT)    
     
     @allure.step('Клик на логотип Самокат')
     def click_scooter_logo(self):
